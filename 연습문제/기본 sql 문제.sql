@@ -30,4 +30,4 @@ select distinct title from titles order by length(title) desc;
 select count(emp_no) from titles where title = 'Engineer';
 
 -- 11. 사번이 13250(Zeydy)인 지원이 직책 변경 상황을 시간순으로 출력해보세요.
-select emp_no, title, from_date, to_date from titles where emp_no = '13250' order by from_date;
+select b.emp_no , a.title, a.from_date, a.to_date from titles a, employees b where b.emp_no = a.emp_no and b.first_name = 'Zeydy' and b.emp_no = '13250' order by from_date;
