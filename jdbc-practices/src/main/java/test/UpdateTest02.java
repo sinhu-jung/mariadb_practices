@@ -10,7 +10,7 @@ public class UpdateTest02 {
 	public static void main(String[] args) {
 		DeptVo vo = new DeptVo();
 		vo.setNo(13L);
-		vo.setName("기획팀");
+		vo.setName("전략기획팀");
 		Boolean result = update(vo);
 		System.out.println(result ? "성공" : "실패");
 	}
