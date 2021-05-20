@@ -1,0 +1,2 @@
+desc author;
+desc book;
