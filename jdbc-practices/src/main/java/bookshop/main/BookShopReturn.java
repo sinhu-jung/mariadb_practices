@@ -23,7 +23,7 @@ public class BookShopReturn {
 	private static void displayBookInfo() {
 		System.out.println();
 		System.out.println("*****도서 정보 출력하기******");
-		List<BookVo> list = new BookDao().findAll();
+		List<BookVo> list = new BookDao().findRetrun();
 		for (BookVo vo : list) {
 			String book = String.format("[%d] 책 재목: %s, 작가: %s, 대여 유무: %s", vo.getNo(), vo.getTitle(),
 					vo.getAuthorName(), vo.getStatus());

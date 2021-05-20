@@ -155,4 +155,57 @@ public class BookDao {
 		return result;
 	}
 
+	public List<BookVo> findRetrun() {
+		List<BookVo> result = new ArrayList<>();
+
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		try {
+			
+			conn = getConnection();
+			
+			String sql = "select a.no ,a.title, b.name, a.status from book a, author b where a.author_no = b.no and a.status='대여중';";
+			pstmt = conn.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				Long no = rs.getLong(1);
+				String title = rs.getString(2);
+				String name = rs.getString(3);
+				String status = rs.getString(4);
+				
+				BookVo vo = new BookVo();
+				vo.setNo(no);
+				vo.setTitle(title);
+				vo.setAuthorName(name);
+				vo.setStatus(status);
+				
+				result.add(vo);
+			}
+
+		} catch (SQLException e) {
+			System.out.println("error: " + e);
+		} finally {
+			try {
+				// 자원 정리(clean-up)
+				if (rs != null) {
+					rs.close();
+				}
+				if (pstmt != null) {
+					pstmt.close();
+				}
+				if (conn != null) {
+					conn.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+
 }
