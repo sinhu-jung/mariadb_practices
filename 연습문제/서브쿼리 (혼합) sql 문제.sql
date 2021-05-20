@@ -14,9 +14,11 @@ where a.emp_no = b.emp_no and b.dept_no = c.dept_no and e.sal = d.salary and e.n
 
 -- 문제3.
 -- 현재, 자신의 부서 평균 급여보다 연봉(salary)이 많은 사원의 사번, 이름과 연봉을 조회하세요 
-select a.emp_no, a.first_name, b.salary, c.dept_name from employees a, salaries b , departments c, dept_emp d ,
+select c.dept_name as dep_name, avg(b.salary) as sal from dept_emp a, salaries b, departments c where a.emp_no = b.emp_no and a.dept_no = c.dept_no and a.to_date = '9999-01-01' and b.to_date = '9999-01-01' group by c.dept_name;
+
+select a.emp_no, a.first_name, b.salary from employees a, salaries b , departments c, dept_emp d ,
 (select c.dept_name as dep_name, avg(b.salary) as sal from dept_emp a, salaries b, departments c where a.emp_no = b.emp_no and a.dept_no = c.dept_no and a.to_date = '9999-01-01' and b.to_date = '9999-01-01' group by c.dept_name) e
-where a.emp_no = b.emp_no and b.emp_no = d.emp_no and c.dept_no = d.dept_no and e.dep_name = c.dept_name and b.salary > e.sal and b.to_date = '9999-01-01' and d.to_date = '9999-01-01';
+where a.emp_no = b.emp_no and b.emp_no = d.emp_no and c.dept_no = d.dept_no and e.dep_name = c.dept_name and b.salary > e.sal and b.to_date = '9999-01-01' and d.to_date = '9999-01-01' group by c.dept_name;
 
 -- 문제4.
 -- 현재, 사원들의 사번, 이름, 매니저 이름, 부서 이름으로 출력해 보세요.
