@@ -1,8 +1,8 @@
 package com.douzone.bookmall.vo;
 
-public class BookVo {
+public class OrderBookVo {
 	private Long no;
-	private String title;
+	private int book_ea;
 	private Long price;
 	public Long getNo() {
 		return no;
@@ -10,11 +10,11 @@ public class BookVo {
 	public void setNo(Long no) {
 		this.no = no;
 	}
-	public String getTitle() {
-		return title;
+	public int getBook_ea() {
+		return book_ea;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setBook_ea(int book_ea) {
+		this.book_ea = book_ea;
 	}
 	public Long getPrice() {
 		return price;
@@ -24,7 +24,6 @@ public class BookVo {
 	}
 	@Override
 	public String toString() {
-		return "BookVo [no=" + no + ", title=" + title + ", price=" + price + "]";
+		return "OrderVo [no=" + no + ", book_ea=" + book_ea + ", price=" + price + "]";
 	}
-	
 }
