@@ -1,15 +1,9 @@
 package com.douzone.bookmall.vo;
 
 public class OrderBookVo {
-	private Long no;
 	private int book_ea;
 	private Long price;
-	public Long getNo() {
-		return no;
-	}
-	public void setNo(Long no) {
-		this.no = no;
-	}
+
 	public int getBook_ea() {
 		return book_ea;
 	}
@@ -24,6 +18,6 @@ public class OrderBookVo {
 	}
 	@Override
 	public String toString() {
-		return "OrderVo [no=" + no + ", book_ea=" + book_ea + ", price=" + price + "]";
+		return "OrderVo [book_ea=" + book_ea + ", price=" + price + "]";
 	}
 }
