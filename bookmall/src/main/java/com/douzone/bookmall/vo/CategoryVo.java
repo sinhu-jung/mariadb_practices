@@ -1,6 +1,6 @@
 package com.douzone.bookmall.vo;
 
-public class CategroyVo {
+public class CategoryVo {
 	private Long no;
 	private String genre;
 	public Long getNo() {

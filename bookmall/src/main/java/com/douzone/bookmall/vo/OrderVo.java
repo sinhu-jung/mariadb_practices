@@ -3,8 +3,30 @@ package com.douzone.bookmall.vo;
 public class OrderVo {
 	private Long no;
 	private Long price;
+	private Long customer_no;
 	private String delivery;
-	private String ordernum;
+	private String ordernum; 
+	private String name;
+	private String email;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public Long getCustomer_no() {
+		return customer_no;
+	}
+	public void setCustomer_no(Long customer_no) {
+		this.customer_no = customer_no;
+	}
 	public Long getNo() {
 		return no;
 	}
@@ -31,7 +53,8 @@ public class OrderVo {
 	}
 	@Override
 	public String toString() {
-		return "OrderVo [no=" + no + ", price=" + price + ", delivery=" + delivery + ", ordernum=" + ordernum + "]";
+		return "OrderVo [no=" + no + ", price=" + price + ", customer_no=" + customer_no + ", delivery=" + delivery
+				+ ", ordernum=" + ordernum + ", name=" + name + ", email=" + email + "]";
 	}
 	
 
