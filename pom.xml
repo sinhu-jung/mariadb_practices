@@ -43,5 +43,6 @@
   <modules>
   	<module>erds</module>
   	<module>jdbc-practices</module>
+  	<module>bookmall</module>
   </modules>
 </project>
