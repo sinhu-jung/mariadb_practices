@@ -17,8 +17,11 @@ import com.douzone.bookmall.vo.OrderVo;
 
 public class BookMall {
 
+	public BookMall(){
+//		insertinfo();
+	}
+	
 	public static void main(String[] args) {
-		//insertinfo();
 		displayinfo();
 	}
 	
