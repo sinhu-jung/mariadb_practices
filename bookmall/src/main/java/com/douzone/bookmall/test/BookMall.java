@@ -18,8 +18,123 @@ import com.douzone.bookmall.vo.OrderVo;
 public class BookMall {
 
 	public static void main(String[] args) {
+		//insertinfo();
 		displayinfo();
 	}
+	
+	
+
+	private static void insertinfo() {
+		categoryInsert();
+		bookInsert();
+		memberInsert();
+		cartInsert();
+		orderInsert();
+		orderBookInsert();
+	}
+
+	private static void orderBookInsert() {
+		OrderBookVo vo = null;
+		
+		vo = new OrderBookVo();
+		vo.setBook_ea(3);
+		vo.setPrice(27000L);
+		vo.setBook_no(1L);
+		vo.setOrder_no(1L);
+		new OrderBookDao().insert(vo);
+		
+		vo = new OrderBookVo();
+		vo.setBook_ea(6);
+		vo.setPrice(31500L);
+		vo.setBook_no(2L);
+		vo.setOrder_no(1L);
+		new OrderBookDao().insert(vo);
+	}
+
+	private static void orderInsert() {
+		OrderVo vo = null;
+		
+		vo = new OrderVo();
+		vo.setPrice(27000L);
+		vo.setDelivery("부산광역시 남구 동명로 92번길 56-10 413호");
+		vo.setOrdernum("2019051620493374");
+		vo.setCustomer_no(1L);
+		new OrderDao().insert(vo);
+	}
+
+	private static void cartInsert() {
+		CartVo vo = null;
+		
+		vo = new CartVo();
+		vo.setEa(3);
+		vo.setCustomer_no(1L);
+		vo.setBook_no(1L);
+		new CartDao().insert(vo);
+		
+		vo = new CartVo();
+		vo.setEa(6);
+		vo.setCustomer_no(1L);
+		vo.setBook_no(2L);
+		new CartDao().insert(vo);
+	}
+
+	private static void memberInsert() {
+		MemberVo vo = null;
+		
+		vo = new MemberVo();
+		vo.setName("둘리");
+		vo.setPhone_num("010-1234-5678");
+		vo.setEmail("enffl@naver.com");
+		vo.setPasswd("Ehcl");
+		new MemberDao().insert(vo);
+		
+		vo = new MemberVo();
+		vo.setName("마이콜");
+		vo.setPhone_num("010-8765-4321");
+		vo.setEmail("akdlzhf@naver.com");
+		vo.setPasswd("ehdnsj");
+		new MemberDao().insert(vo);
+	}
+
+	private static void bookInsert() {
+		BookVo vo = null;
+		
+		vo = new BookVo();
+		vo.setCategori_num(1L);
+		vo.setTitle("이것이 자바다");
+		vo.setPrice(30000L);
+		new BookDao().insert(vo);
+		
+		vo = new BookVo();
+		vo.setCategori_num(1L);
+		vo.setTitle("스프링 인 액션");
+		vo.setPrice(35000L);
+		new BookDao().insert(vo);
+		
+		vo = new BookVo();
+		vo.setCategori_num(2L);
+		vo.setTitle("달러구트 꿈 백화점");
+		vo.setPrice(13800L);
+		new BookDao().insert(vo);
+	}
+
+	private static void categoryInsert() {
+		CategoryVo vo = null;
+		
+		vo = new CategoryVo();
+		vo.setGenre("컴퓨터/IT");
+		new CategoryDao().insert(vo);
+		
+		vo = new CategoryVo();
+		vo.setGenre("소설");
+		new CategoryDao().insert(vo);
+		
+		vo = new CategoryVo();
+		vo.setGenre("경제");
+		new CategoryDao().insert(vo);
+	}
+
+
 
 	private static void displayinfo() {
 		System.out.println("*****카테고리 정보 출력하기*****");
