@@ -22,7 +22,7 @@ public class OrderDao {
 		try {
 			conn = getConnection();
 
-			String sql = "select a.order_number, b.name, b.e_mail, (a.price * c.book_ea), a.delivery from order_bookmall a, customer b, orderbook c where a.customer_no = b.no and c.order_no = a.no group by order_number";
+			String sql = "select a.order_number, b.name, b.e_mail, min(a.price * c.book_ea), a.delivery from order_bookmall a, customer b, orderbook c where a.customer_no = b.no and c.order_no = a.no";
 			pstmt = conn.prepareStatement(sql);
 
 			rs = pstmt.executeQuery();

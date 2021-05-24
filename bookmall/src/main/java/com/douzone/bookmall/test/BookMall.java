@@ -22,8 +22,6 @@ public class BookMall {
 		displayinfo();
 	}
 	
-	
-
 	private static void insertinfo() {
 		categoryInsert();
 		bookInsert();
